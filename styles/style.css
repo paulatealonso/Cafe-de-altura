@@ -90,6 +90,7 @@ header li a {
 #bagLogo {
     width: 40px;
     margin-right: 30px;
+    color: inherit;
 }
 
 .bag {
@@ -253,16 +254,17 @@ body {
     height: 219.39px;
 }
 
-.news a {
+.news button {
     text-decoration: none;
-    background-color: pink;
+    background-color:#2A5B45B3;
     padding: 8px;
+    border: none;
     border-radius: 4px;
     color: white;
 }
 
-.news a:hover {
-    background-color: pink;
+.news button:hover {
+    background-color: #2A5B45;
 }
 
 #readMore {
@@ -585,6 +587,7 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
 
 
 

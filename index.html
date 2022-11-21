@@ -15,6 +15,7 @@
 </head>
 
 <body class="container">
+    <ul id="shopCart"></ul>
     <header>
         <div id="headerImg">
             <img src="./assets/cafedealtura.com.png" alt="Logo Cafe de Altura">
@@ -42,9 +43,9 @@
             </div>
         </div>
 
-        <div id="bagLogo">
-            <img src="./assets/bag.svg" alt="Bag" class="bag">
-        </div>
+        <a id="bagLogo">
+                <img src="./assets/bag.svg" alt="Bag" class="bag">
+        </a>
     </header>
 
     <main>
@@ -103,7 +104,7 @@
             </div>
         </section>
 
-        <section id="section3">
+        <section id="section3"> 
             <h3>Novedades</h3>
 
             <div class="row justify-content-center buyBag">
@@ -112,7 +113,7 @@
                         <img src="./assets/saquito1.png" alt="Saco">
                         <p><strong>Costa Rica Tarrazú</strong></p>
                         <p>9,00 €</p>
-                        <a href="#">Añadir</a>
+                        <button id="btnAdd1" onclick="selectProduct('btnAdd1')">Añadir</button>
                     </div>
                 </div>
 
@@ -121,7 +122,7 @@
                         <img src="./assets/saquito2.png" alt="Icon Transporter">
                         <p><strong>Colombia Los Naranjos</strong></p>
                         <p>9,00 €</p>
-                        <a href="#">Añadir</a>
+                        <button id="btnAdd2" onclick="selectProduct('btnAdd2')">Añadir</button>
                     </div>
                 </div>
 
@@ -130,7 +131,7 @@
                         <img src="./assets/saquito3.png" alt="Present Icon">
                         <p><strong>Los Amanecer</strong></p>
                         <p>9,00 €</p>
-                        <a href="#">Añadir</a>
+                        <button id="btnAdd3" onclick="selectProduct('btnAdd3')">Añadir</button>
                     </div>
                 </div>
 
@@ -139,7 +140,7 @@
                         <img src="./assets/saquito4.png" alt="List Icon">
                         <p><strong>Etiopía Yrgacheff</strong></p>
                         <p>9,00 €</p>
-                        <a href="#">Añadir</a>
+                        <button id="btnAdd4" onclick="selectProduct('btnAdd4')">Añadir</button>
                     </div>
                 </div>
             </div>
@@ -149,7 +150,7 @@
                 <img src="./assets/flechita.png" alt="Icon direction">
             </div>
         </section>
-        <!-- </section> -->
+
 
         <section>
             <article id="section4">
@@ -357,6 +358,7 @@
             <p>Todos los derechos reservados - Café de Altura SL - 2022</p>
         </div>
 
+        <script src="./main.js"></script>
     </footer>
 </body>
 
