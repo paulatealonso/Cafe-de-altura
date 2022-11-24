@@ -15,7 +15,9 @@
 </head>
 
 <body class="container">
-    <ul id="shopCart"></ul>
+    <div id="shopCart">
+        <button id= "removePrd">X</button>
+    </div>
     <header>
         <div id="headerImg">
             <img src="./assets/cafedealtura.com.png" alt="Logo Cafe de Altura">
@@ -257,15 +259,15 @@
                     </div>
 
                     <div class="col-6">
-                        <form>
+                        <form id = "formU">
                             <div class="userForm">
                                 <label for="username" class="form-label">Nombre completo</label>
-                                <input type="username" class="form-control" id="username">
+                                <input type="text" class="form-control" id="username">
                             </div>
 
                             <div class="userForm">
                                 <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input type="text" class="form-control" id="inputEmail4">
                             </div>
 
                             <br>
@@ -280,11 +282,11 @@
                                     <option value="5">ITA</option>
                                     <label for="tel">Teléfono</label>
                                 </select>
-                                <input type="tel" id="tel" name="tel" placeholder="+1 (555) 987-6543">
+                                <input type="text" id="tel" name="tel" placeholder="+1 (555) 987-6543">
                             </div>
 
                             <div id="texti">
-                                <textarea name="textarea" placeholder="¿En qué podemos ayudarte?"></textarea>
+                                <textarea name="textarea" id= "textarea" placeholder="¿En qué podemos ayudarte?"></textarea>
                             </div>
 
                             <div id="check">
@@ -298,7 +300,7 @@
                             </div>
 
                             <div id="buttomSend">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" id= "btnForm" class="btn btn-primary">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -358,7 +360,8 @@
             <p>Todos los derechos reservados - Café de Altura SL - 2022</p>
         </div>
 
-        <script src="./main.js"></script>
+        <script src="../JS/main.js"></script>
+        <script src="../JS/form.js"></script>
     </footer>
 </body>
 
