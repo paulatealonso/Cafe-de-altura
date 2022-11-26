@@ -591,7 +591,7 @@ footer {
 }
 
 #shopCart {
-    display: none;
+   
     position: fixed;
     right: 80px;
     top: 75px;
@@ -606,14 +606,16 @@ footer {
     border: #515051 1px solid;
 }
 
-#shopCart div {
+#shopCart .wrapper {
     margin-bottom: 15px;
-    margin-top: 10px;
+    margin-top: 15px;
     padding-bottom: 15px;
     border-bottom: #515051 1px solid;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
-#shopCart button {
+#shopCart .btnStyle {
     width: 30px;
     margin: 5px;
     color: #090909;
@@ -625,10 +627,11 @@ footer {
         -6px -6px 12px #ffffff;
 }
 
-#shopCart button:active {
+#shopCart .btnStyle:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5,
                 inset -4px -4px 12px #ffffff;
    }
+
 
 
