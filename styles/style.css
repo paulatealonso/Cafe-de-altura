@@ -591,7 +591,7 @@ footer {
 }
 
 #shopCart {
-    
+    display: none;
     position: absolute;
     right: 80px;
     top: 75px;
@@ -663,7 +663,8 @@ footer {
     width: 25px;
     height: 12px;
     margin: 5px;
-    float: right;
+    position: absolute;
+    right: 25px;
     color: #515051;
     border-radius: 0.4em;
     background: #e8e8e8;
@@ -682,7 +683,7 @@ footer {
 #shopCart .btnDelRem {
     position: relative;
     display: inline-block;
-    margin: 100px 0 5px 30px;
+    margin: 120px 0 5px 30px;
     padding: 8px 10px;
     text-align: center;
     font-size: 12px;
