@@ -83,10 +83,10 @@ function duplicatedNone1() {
         </div>
 
         <div>
-        ${element.idProduct} <button>+</button>${element.quantity}<button>-</button>
+        ${element.idProduct} <button onclick ="plus(this)">+</button>${element.quantity}<button onclick = "lessProduct(this)">-</button>
+        <button id= "removStyle" class = "btnStyle" onclick="deleteItem(this)">X</button>
         </div>
 
-        <button id= "removStyle" class = "btnStyle" onclick="deleteItem(this)">X</button>
 
         </div>`
         priceTotal += (element.quantity * element.price)
@@ -99,7 +99,10 @@ function duplicatedNone1() {
         shopCart.innerHTML = ""
         productStorage = []
     }*/
-
+    if (duplicatedNone.length == 0) {
+        btnDeletes.style.display = "none"
+        shopCart.innerHTML = "<p>Su cesta está vacía</p>"
+    }
 
     productStorage = duplicatedNone
     localStorage.setItem('productStr', JSON.stringify(productStorage))
@@ -177,10 +180,79 @@ btnDeletes.onclick = (e) => {
 // // RETIRAR PRODUCTO 
 
 const deleteItem = (btn) => {
-    let removeBtn = btn.parentNode
-    const index = productStorage.indexOf(removeBtn)
-    productStorage.splice(index, 1)
-    localStorage.setItem('productStr', JSON.stringify(productStorage))
+    let removeBtn = btn.parentNode.textContent
+    let resDel = removeBtn
+    resDel = [...resDel]
+
+    
+    productStorage.forEach(e => {
+
+        if (resDel[9] == e.idProduct) {
+            productStorage.splice(productStorage.indexOf(e), 1)
+            e.quantity = 0
+        }
+    })
+
+    resDel = []
+    duplicatedNone1()
+}
+
+
+
+//BTN RESTAR
+
+const lessProduct = (button) => {
+
+    let btnLess = button.parentNode.textContent
+    let result = btnLess
+    result = [...result]
+
+    if (result[9] == '1') {
+        if (product[0].quantity === 0) {
+            return
+        }
+        product[0].quantity--
+    }
+    if (result[9] == '2') {
+        if (product[1].quantity === 0) {
+            return
+        }
+        product[1].quantity--
+    }
+    if (result[9] == '3') {
+        if (product[2].quantity === 0) {
+            return
+        }
+        product[2].quantity--
+    }
+    if (result[9] == '4') {
+        if (product[3].quantity === 0) {
+            return
+        }
+        product[3].quantity--
+    }
+
+    duplicatedNone1()
+}
+
+const plus = (button) => {
+
+    let plusBtn = button.parentNode.textContent
+    let plusIndex = plusBtn
+    plusIndex = [...plusIndex]
+
+    if (plusIndex[9] == '1') {
+        product[0].quantity++
+    }
+    if (plusIndex[9] == '2') {
+        product[1].quantity++
+    }
+    if (plusIndex[9] == '3') {
+        product[2].quantity++
+    }
+    if (plusIndex[9] == '4') {
+        product[3].quantity++
+    }
     duplicatedNone1()
 }
 
@@ -189,55 +261,6 @@ const deleteItem = (btn) => {
 
 
 
-
-
-
-
-
-
-
-
-
-//ACORDEON
-
-const buttonDropDown1 = document.querySelector(".dropDownone")
-const text1 = document.querySelector(".textFirst")
-
-buttonDropDown1.onclick = () => {
-
-    if (text1.style.display === "block") {
-        text1.style.display = "none "
-    } else {
-        text1.style.display = "block"
-    }
-
-}
-
-const buttonDropDown2 = document.querySelector(".dropDownsecond")
-const text2 = document.querySelector(".textSecond")
-
-buttonDropDown2.onclick = () => {
-
-    if (text2.style.display === "none") {
-        text2.style.display = "block"
-    } else {
-        text2.style.display = "none"
-    }
-
-}
-
-const buttonDropDown3 = document.querySelector(".dropDownThird")
-const text3 = document.querySelector(".textthird")
-
-buttonDropDown3.onclick = () => {
-
-    if (text3.style.display === "none") {
-        text3.style.display = "block"
-    } else {
-        text3.style.display = "none"
-    }
-
-}
 
 
 
