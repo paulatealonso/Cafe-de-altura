@@ -34,6 +34,16 @@ function noDuplicate() {
         </div>
         `
         shopCart.appendChild(wrapper)
+
+    })
+
+    localStorage.setItem('productStr', JSON.stringify(productStorage))
+
+}
+
+noDuplicate()
+
+
         // <div class="wrapper">
 
         // <div class = "borderPrd">
@@ -58,12 +68,7 @@ function noDuplicate() {
 
         // priceTotal += (element.quantity * element.price)
         // totalProducts += element.quantity
-    })
-    localStorage.setItem('productStr', JSON.stringify(productStorage))
 
-}
-
-noDuplicate()
 // // EVITAR PRODUCTOS DUPLICADOS
 
 // function duplicatedNone1() {
@@ -228,100 +233,76 @@ buttonBag.onclick = (e) => {
 
 
 
-// // // BOTÓN VACIAR
+// // BOTÓN VACIAR
 
-// btnDeletes.onclick = (e) => {
-//     e.preventDefault()
+btnDeletes.onclick = (e) => {
+    e.preventDefault()
+    
 
-//     productStorage.forEach(e => {
-//         e.quantity = 0
-//     })
+    productStorage.forEach(e => {
+        productStorage = []
+    })
 
-//     duplicatedNone1()
-//     btnDeletes.style.display = "none"
-//     shopCart.innerHTML = "<p>Su cesta está vacía</p>"
-// }
-
-
-
-// // // RETIRAR PRODUCTO 
-
-// const deleteItem = (btn) => {
-//     let removeBtn = btn.parentNode.textContent
-//     let resDel = removeBtn
-//     resDel = [...resDel]
-
-
-//     productStorage.forEach(e => {
-
-//         if (resDel[9] == e.idProduct) {
-//             productStorage.splice(productStorage.indexOf(e), 1)
-//             e.quantity = 0
-//         }
-//     })
-
-//     resDel = []
-//     duplicatedNone1()
-// }
+    noDuplicate()
+    btnDeletes.style.display = "none"
+    shopCart.innerHTML = "<p>Su cesta está vacía</p>"
+}
 
 
 
-// //BTN RESTAR
+// // RETIRAR PRODUCTO 
 
-// const lessProduct = (button) => {
+const deleteItem = (btn) => {
+    
+    btn = btn.parentNode.parentNode.firstElementChild.textContent
+    console.log(btn);
 
-//     let btnLess = button.parentNode.textContent
-//     let result = btnLess
-//     result = [...result]
 
-//     if (result[9] == '1') {
-//         if (product[0].quantity === 0) {
-//             return
-//         }
-//         product[0].quantity--
-//     }
-//     if (result[9] == '2') {
-//         if (product[1].quantity === 0) {
-//             return
-//         }
-//         product[1].quantity--
-//     }
-//     if (result[9] == '3') {
-//         if (product[2].quantity === 0) {
-//             return
-//         }
-//         product[2].quantity--
-//     }
-//     if (result[9] == '4') {
-//         if (product[3].quantity === 0) {
-//             return
-//         }
-//         product[3].quantity--
-//     }
+    productStorage.forEach(e => {
 
-//     duplicatedNone1()
-// }
+        if (btn.includes(e.brand)) {
+            productStorage.splice(productStorage.indexOf(e), 1)
+            e.quantity = 1
+        }
+    })
 
-// const plus = (button) => {
+    noDuplicate()
+}
 
-//     let plusBtn = button.parentNode.textContent
-//     let plusIndex = plusBtn
-//     plusIndex = [...plusIndex]
 
-//     if (plusIndex[9] == '1') {
-//         product[0].quantity++
-//     }
-//     if (plusIndex[9] == '2') {
-//         product[1].quantity++
-//     }
-//     if (plusIndex[9] == '3') {
-//         product[2].quantity++
-//     }
-//     if (plusIndex[9] == '4') {
-//         product[3].quantity++
-//     }
-//     duplicatedNone1()
-// }
+
+//BTN RESTAR
+
+const lessProduct = (btn) => {
+
+    btn = btn.parentNode.parentNode.firstElementChild.textContent
+    
+    productStorage.forEach (e => {
+        if (btn.includes(e.brand)) {
+            productStorage[productStorage.indexOf(e)].quantity -= 1
+        }
+        if (e.quantity === 0) {
+            productStorage.splice(productStorage.indexOf(e), 1)
+        }
+    })
+
+    noDuplicate()
+
+}
+
+const plus = (button) => {
+
+    button = button.parentNode.parentNode.firstElementChild.textContent
+
+    productStorage.forEach (e => {
+        if (button.includes(e.brand)) {
+            productStorage[productStorage.indexOf(e)].quantity += 1
+        }
+    })
+
+
+    noDuplicate()
+}
 
 
 

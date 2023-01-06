@@ -1,5 +1,5 @@
 productStorage = localStorage.getItem('productStr') ? JSON.parse(localStorage.getItem('productStr')) : []
-const cardBox = document.getElementById('apProd')
+const shop = document.getElementById('shop')
 
 axios
     .get(`https://cafe-de-altura-api.vercel.app/api/products`)
@@ -7,16 +7,11 @@ axios
 
         let cafe = response.data.products
 
-
-        cafe = cafe.slice(0, 4)
-
-        
-
         cafe.forEach(prod => {
 
             let cafeBox = document.createElement('div')
             cafeBox.setAttribute('class', 'col-3 newsBox')
-            cardBox.appendChild(cafeBox)
+            shop.appendChild(cafeBox)
 
             let news = document.createElement('div')
             cafeBox.setAttribute('class', 'news')
@@ -64,5 +59,3 @@ axios
     
 
     })
-
-
