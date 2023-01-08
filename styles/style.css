@@ -708,3 +708,29 @@ footer {
 #btnDeletes:active {
     transform: scale(0.9);
 }
+
+#goBag {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0 5px 10px;
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgba(42, 91, 69, 1);
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid rgba(42, 91, 69, 1);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 rgba(42, 91, 69, 1);
+}
+
+#goBag:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 rgba(42, 91, 69, 1);
+}
+
+#goBag:active {
+    transform: scale(0.9);
+}

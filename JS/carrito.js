@@ -2,10 +2,9 @@ productStorage = localStorage.getItem('productStr') ? JSON.parse(localStorage.ge
 console.log(productStorage);
 const shopCart = document.querySelector("#shopCart")
 const cart2 = document.querySelector("#cart2")
+const goBag = document.getElementById("goBag")
 
 function noDuplicate() {
-    let priceTotal = 0
-    let totalProducts = 0
 
     shopCart.innerHTML = ``
 
@@ -44,177 +43,6 @@ function noDuplicate() {
 noDuplicate()
 
 
-        // <div class="wrapper">
-
-        // <div class = "borderPrd">
-        // ${element.img} 
-        // <h6>${element.name}</h6>
-        // </div>
-
-        // <div class= "itemPrce">
-
-        // <p class= "textJs">Unidad: ${element.quantity}</p>
-        // <p>Precio total: ${element.quantity * element.price}${divisa}</p>
-
-        // </div>
-
-        // <div>
-        // ${element.idProduct} <button onclick ="plus(this)">+</button>${element.quantity}<button onclick = "lessProduct(this)">-</button>
-        // <button id= "removStyle" class = "btnStyle" onclick="deleteItem(this)">X</button>
-        // </div>
-
-
-        // </div>
-
-        // priceTotal += (element.quantity * element.price)
-        // totalProducts += element.quantity
-
-// // EVITAR PRODUCTOS DUPLICADOS
-
-// function duplicatedNone1() {
-//     shopCart.innerHTML = ""
-
-//     let duplicatedNone = productStorage.filter((item, index) => {
-//         return productStorage.indexOf(item) === index;
-//     })
-
-//     duplicatedNone.forEach(e => {
-//         if (e.quantity === 0) {
-//             duplicatedNone.splice(duplicatedNone.indexOf(e), 1)
-//         }
-//     })
-
-//     let priceTotal = 0;
-//     let totalProducts = 0;
-
-//     duplicatedNone.forEach(element => {
-//         shopCart.innerHTML += `<div class="wrapper">
-
-//         <div class = "borderPrd">
-//         ${element.img} 
-//         <h6>${element.name}</h6>
-//         </div>
-
-//         <div class= "itemPrce">
-
-//         <p class= "textJs">Unidad: ${element.quantity}</p>
-//         <p>Precio total: ${element.quantity * element.price}${divisa}</p>
-
-//         </div>
-
-//         <div>
-//         ${element.idProduct} <button onclick ="plus(this)">+</button>${element.quantity}<button onclick = "lessProduct(this)">-</button>
-//         <button id= "removStyle" class = "btnStyle" onclick="deleteItem(this)">X</button>
-//         </div>
-
-
-//         </div>`
-//         priceTotal += (element.quantity * element.price)
-//         totalProducts += element.quantity
-//     })
-//     /*shopCart.innerHTML += `<p>Mi cesta, ${totalProducts} artículos</p>`
-//      shopCart.innerHTML += `<p>Total productos: ${priceTotal} ${divisa}</p>`
-
-//     if (shopCart.length < 0) {
-//         shopCart.innerHTML = ""
-//         productStorage = []
-//     }*/
-//     if (duplicatedNone.length == 0) {
-//         btnDeletes.style.display = "none"
-//         shopCart.innerHTML = "<p>Su cesta está vacía</p>"
-//     }
-
-//     productStorage = duplicatedNone
-//     localStorage.setItem('productStr', JSON.stringify(productStorage))
-// }
-
-
-
-// const btnAdd1 = document.querySelector("#btnAdd1")
-// const btnAdd2 = document.querySelector("#btnAdd2")
-// const btnAdd3 = document.querySelector("#btnAdd3")
-// const btnAdd4 = document.querySelector("#btnAdd4")
-
-// const btnDeletes = document.querySelector("#btnDeletes")
-
-
-// let divisa = "€";
-
-// let productStorage = []
-
-// localStorage.clear()
-
-
-// product = [
-//     {
-//         idProduct: 1,
-//         name: "Costa Rica Tarrazú",
-//         price: 9.00,
-//         quantity: 0,
-//         img: `<img src="./assets/saquito1.png" alt="Saco">`
-//     },
-//     {
-//         idProduct: 2,
-//         name: "Colombia Los Naranjos",
-//         price: 9.00,
-//         quantity: 0,
-//         img: `<img src="./assets/saquito2.png" alt="Icon Transporter">`
-//     },
-//     {
-//         idProduct: 3,
-//         name: "Los Amanecer",
-//         price: 9.00,
-//         quantity: 0,
-//         img: `<img src="./assets/saquito3.png" alt="Present Icon">`
-//     },
-//     {
-//         idProduct: 4,
-//         name: "Etiopía Yrgacheff",
-//         price: 9.00,
-//         quantity: 0,
-//         img: `<img src="./assets/saquito4.png" alt="List Icon">`
-//     }
-// ]
-
-
-
-
-
-
-
-
-// // AGREGAR PRODUCTOS A LA CESTA
-
-// const selectProduct = (button) => {
-
-//     if (button == "btnAdd1") {
-//         product[0].quantity++
-//         productStorage.push(product[0])
-//         localStorage.setItem('productStr', JSON.stringify(productStorage))
-//         btnDeletes.style.display = "block"
-
-//     }
-//     if (button == "btnAdd2") {
-//         product[1].quantity++
-//         productStorage.push(product[1])
-//         localStorage.setItem('productStr', JSON.stringify(productStorage))
-//         btnDeletes.style.display = "block"
-//     }
-//     if (button == "btnAdd3") {
-//         product[2].quantity++
-//         productStorage.push(product[2])
-//         localStorage.setItem('productStr', JSON.stringify(productStorage))
-//         btnDeletes.style.display = "block"
-//     }
-//     if (button == "btnAdd4") {
-//         product[3].quantity++
-//         productStorage.push(product[3])
-//         localStorage.setItem('productStr', JSON.stringify(productStorage))
-//         btnDeletes.style.display = "block"
-//     }
-//     duplicatedNone1()
-// }
-
 
 
 // ABRIR Y CERRAR CESTA
@@ -245,6 +73,7 @@ btnDeletes.onclick = (e) => {
 
     noDuplicate()
     btnDeletes.style.display = "none"
+    goBag.style.display = "none"
     shopCart.innerHTML = "<p>Su cesta está vacía</p>"
 }
 

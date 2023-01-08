@@ -10,10 +10,13 @@ axios
         cafe.forEach(prod => {
 
             let cafeBox = document.createElement('div')
-            cafeBox.setAttribute('class', 'col-3 newsBox')
+            cafeBox.setAttribute('class', 'newsBox')
             shop.appendChild(cafeBox)
 
             let news = document.createElement('div')
+            if (!prod.available) {
+                news.style.opacity = "40%"
+            }
             cafeBox.setAttribute('class', 'news')
             cafeBox.appendChild(news)
 
@@ -31,6 +34,10 @@ axios
 
             let btn1 = document.createElement('button')
             btn1.innerText = `Añadir`
+            if (!prod.available) {
+                btn1.setAttribute("disabled", "disabled")
+                btn1.style.opacity = "20%"
+            }
             cafeBox.appendChild(btn1)
 
             
@@ -53,6 +60,8 @@ axios
 
 
                 noDuplicate()
+                btnDeletes.style.display = "inline"
+                goBag.style.display = "inline"
             }
 
         })

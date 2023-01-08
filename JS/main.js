@@ -58,6 +58,8 @@ axios
 
 
                 noDuplicate()
+                btnDeletes.style.display = "inline"
+                goBag.style.display = "inline"
             }
 
         })
