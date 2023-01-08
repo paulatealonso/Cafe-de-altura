@@ -1,5 +1,5 @@
 productStorage = localStorage.getItem('productStr') ? JSON.parse(localStorage.getItem('productStr')) : []
-console.log(productStorage);
+
 const shopCart = document.querySelector("#shopCart")
 const cart2 = document.querySelector("#cart2")
 const goBag = document.getElementById("goBag")
