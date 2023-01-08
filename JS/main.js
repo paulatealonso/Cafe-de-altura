@@ -1,6 +1,7 @@
 productStorage = localStorage.getItem('productStr') ? JSON.parse(localStorage.getItem('productStr')) : []
 const cardBox = document.getElementById('apProd')
 
+
 axios
     .get(`https://cafe-de-altura-api.vercel.app/api/products`)
     .then(response => {

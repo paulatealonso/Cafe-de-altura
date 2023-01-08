@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
     <title>Café de Altura</title>
 </head>
 
 <body>
-    <!-- <div id="cart2">
+    <div id="cart2">
 
         <div id="shopCart">
         </div>
@@ -21,7 +22,7 @@
             <button id="goBag">Ir a la cesta</button>
         </div>
 
-    </div> -->
+    </div>
 
     <header>
         <div id="headerImg">
@@ -52,13 +53,67 @@
 
         <a id="bagLogo">
             <img src="./assets/bag.svg" alt="Bag" class="bag">
+            <span id="count"></span>
         </a>
     </header>
 
-    <section>
-        
+
+    <section id="sectionCart">
+
+
     </section>
 
+    <br>
+
+
+    <section id="radioBox">
+        <h3>Seleccionar envío</h3>
+        <br>
+
+
+        <article class="contRadio">
+            <div class="tog">
+                <input type="radio" name="option" id="free" checked>
+                <label>
+                    <h4>Envío 5-7 días</h4>
+                    <p>Opción estándar sin seguimiento</p>
+                </label>
+            </div>
+            <span>GRATIS</span>
+        </article>
+
+        <br>
+
+        <article class="contRadio">
+            <div class="tog">
+                <input type="radio" name="option" id="paid">
+                <label>
+                    <h4>Envío urgente 24h </h4>
+                    <p>Recibe tu pedido en las siguientes 24h (Para pedidos realizados antes de las 13:00).</p>
+                </label>
+            </div>
+            <span>9,00€</span>
+        </article>
+
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <div id="textF">
+            <p>Todos los derechos reservados - Café de Altura SL - 2022</p>
+        </div>
+    </footer>
+
+    <script src="./JS/cart.js"></script>
 </body>
 
 </html>

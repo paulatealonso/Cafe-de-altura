@@ -3,17 +3,19 @@ productStorage = localStorage.getItem('productStr') ? JSON.parse(localStorage.ge
 const shopCart = document.querySelector("#shopCart")
 const cart2 = document.querySelector("#cart2")
 const goBag = document.getElementById("goBag")
+let count = document.getElementById("count")
 
 function noDuplicate() {
 
     shopCart.innerHTML = ``
+
+    let totalProduct = 0
 
     productStorage.forEach(element => {
 
         let wrapper = document.createElement(`div`)
         wrapper.setAttribute(`class`, `wrapper`)
 
-        console.log(element);
         wrapper.innerHTML = `
         <div class = "borderPrd">
         <img src="${element.img_url}" alt="">
@@ -33,8 +35,17 @@ function noDuplicate() {
         </div>
         `
         shopCart.appendChild(wrapper)
+        totalProduct += element.quantity
 
     })
+
+    count.textContent = totalProduct
+
+    if (totalProduct < 1) {
+        count.style.display = "none"
+    } else {
+        count.style.display = "inline-block"
+    }
 
     localStorage.setItem('productStr', JSON.stringify(productStorage))
 
