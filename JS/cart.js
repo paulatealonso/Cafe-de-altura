@@ -60,6 +60,8 @@ function cart(text) {
         `
     })
 
+    //CAJA CARRITO
+
     box2 = document.createElement("div")
     box2.setAttribute('id', 'box2')
 
@@ -109,8 +111,8 @@ function cart(text) {
 
     <br>
     <div class="fi">
-    <button id="checkout">Ir al checkout</button>
-    <button id="contin">Seguir comprando</button>
+    <a href="./pasarela.html"><button id="checkout">Ir al checkout</button></a>
+    <a href="./products.html"><button id="contin">Seguir comprando</button></a>
     </div>
 
     <p id= "IVA">Incluye ${IVA.toFixed(2)}€ de IVA</p>
@@ -118,6 +120,7 @@ function cart(text) {
 
     sectionCart.appendChild(box2)
     localStorage.setItem('pricesStr', JSON.stringify(pricesStorage))
+
 }
 
 

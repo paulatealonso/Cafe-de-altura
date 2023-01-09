@@ -10,8 +10,6 @@ function cart(text) {
 
     sectionCart.innerText = ``
 
-
-
     box2 = document.createElement("div")
     box2.setAttribute('id', 'box2')
 
@@ -27,6 +25,7 @@ function cart(text) {
     } else {
         text = "9,00€"
     }
+
 
     
     box2.innerHTML = `
@@ -47,12 +46,10 @@ function cart(text) {
     <p class ="pr">${pricesStorage[pricesStorage.length -1]}</p>
     </div>
 
+
     <div class="fi">
-    <button id="checkout">Ir al checkout</button>
-    <button id="contin">Seguir comprando</button>
+    <button id="checkout">Pagar y realizar pedido</button>
     </div>
-
-
     `
 
     sectionCart.appendChild(box2)
@@ -61,4 +58,34 @@ function cart(text) {
 
 
 window.addEventListener("load", cart)
+
+
+
+// //CHECKBOX
+
+const titular = document.getElementById("titular")
+const target = document.getElementById("target")
+const cvc = document.getElementById("cvc")
+const date = document.getElementById("date")
+const cvc2 = document.getElementById("cvc2")
+
+const inputRadio = document.getElementById("inputRadio")
+
+// ADDRESS
+
+
+const name = document.getElementById("name")
+const lastNames = document.getElementById("lastNames")
+const phone = document.getElementById("phone2")
+const email = document.getElementById("email")
+const country = document.getElementById("country")
+const cp = document.getElementById("cp")
+const population = document.getElementById("population")
+const street = document.getElementById("street")
+const numbers = document.getElementById("numbers")
+const door = document.getElementById("door")
+const apartment = document.getElementById("apartment")
+
+const checkout = document.getElementById("checkout")
+
 
